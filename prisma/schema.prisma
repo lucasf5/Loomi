@@ -7,6 +7,18 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
+enum UserType {
+  ADMIN
+  CLIENT
+}
+
+enum OrderStatus {
+  RECEIVED
+  IN_PREPARATION
+  DISPATCHED
+  DELIVERED
+}
+
 model User {
   id        String   @id @default(uuid())
   name      String
